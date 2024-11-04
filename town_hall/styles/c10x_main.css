@@ -15,12 +15,12 @@ body {
     border: 3px solid #931420;
     background-color: #fffded;
     display: grid;
-    grid-template: repeat(4, auto) / auto 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
-        "head head"
-        "navi navi"
-        "main main"
-        "foot foot";
+        "head head head head head head head head head head head head"
+        "navi navi navi navi navi navi navi navi navi navi navi navi"
+        "main main main main main main main main main main main main"
+        "foot foot foot foot foot foot foot foot foot foot foot foot";
 }
 a:focus, a:hover {
 	font-style: italic;
@@ -76,7 +76,7 @@ header img {
 main {
     grid-area: main;
     display: grid;
-    grid-template: auto / 30% auto;
+    grid-template-columns: 4fr 8fr;
     grid-gap: 2.5%;
     grid-template-areas:
         "side sec";
@@ -168,8 +168,20 @@ footer p {
 
 /* screen widths 716px to 959px */
 @media only screen and (max-width: 959px) {
-	section h1 { font-size: 135%; }
-	section h2, aside h2 { font-size: 120%; }
+	body{
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"head"
+			"navi"
+			"main"
+			"foot";
+	}
+	main{
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"sec"
+			"side";
+	}
 }
 
 /* screen widths 480px to 715px */
